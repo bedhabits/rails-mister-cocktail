@@ -5,28 +5,21 @@
     <%= image_tag "#{@cocktail.photo}", alt: "#{@cocktail.name}", width: 300 %>
   </p>
 
-  <ul>
+  <ul class="list-group list-group-flush">
     <% @cocktail.doses.each do |dose| %>
-    <li>
-      <%= "#{dose.description} - #{Ingredient.find(dose.ingredient_id).name}" %><%= link_to " delete ingredient", cocktail_dose_path(@cocktail, dose), method: :delete %>
+    <li class="unstyled">
+      <%= "#{dose.description} - #{Ingredient.find(dose.ingredient_id).name}" %>
+      <%= link_to " delete ingredient", cocktail_dose_path(@cocktail, dose), method: :delete, class: "btn-sm btn-outline-secondary" %>
     </li>
     <% end %>
   </ul>
 
-
-
-  <!-- <ul>
-    <li>
-      <%= @cocktail.ingredient %>
-    </li>
-  </ul> -->
-
-  <p>
-    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail) %>
+  <p class="mt-2" >
+    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-pramary", id: "adding" %>
   </p>
 
-  <p>
-    <%= link_to "Back to cocktails list", cocktails_path %>
+  <p class="mt-2" >
+    <%= link_to "Back to cocktails list", cocktails_path, class: "btn btn-outline-secondary"%>
   </p>
 
 </div>
