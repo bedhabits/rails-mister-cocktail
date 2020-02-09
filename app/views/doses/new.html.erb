@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row col-xs-12 col-sm-8 mt-5">
+    <h1>Add Ingredients</h1>
+
+  <br/>
+
+  <div class="row col-xs-12 col-sm-10">
+    <p>
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient, collection: Ingredient.order(:name) %>
+        <%= link_to "Back to cocktail", cocktail_path(@cocktail), class: "btn btn-outline-secondary" %> <%= f.submit "Add ingredients", class: "btn btn-primary" %>
+      <% end %>
+    </p>
+  </div>
+
+  </div>
+</div>

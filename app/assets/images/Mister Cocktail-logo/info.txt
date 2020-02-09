@@ -1,0 +1,18 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Rancho-Regular
+font link: https://fonts.google.com/specimen/Rancho
+font author: Sideshow
+font author site: http://www.fontbros.com/foundries/sideshow
+Slogan Font: officecodepro-light.otf
+
+icon designer: Magicon
+icon designer link: /magicon
+        
+
+fontColor: {"hex":"#FFFFFF"}
+bgColor: {"hex":"#000000"}
+iconColor: {"hex":"#FFFFFF"}
+sloganColor: {"hex":"#FFFFFF"}
+      

@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:create, :show]
+  before_action :set_cocktail, only: %i[show destroy]
 
   def index
     @cocktails = Cocktail.all
@@ -9,21 +9,30 @@ class CocktailsController < ApplicationController
   end
 
   def new
-    @cocktail = Cocktail.new(set_cocktail)
+    @cocktail = Cocktail.new
   end
 
   def create
-    @cocktail = Cocktail.new(cocktail)
+    @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
-      redirect_to @cocktail_path
+      redirect_to cocktails_path
     else
       render :new
     end
+  end
+
+  def destroy
+    @cocktail.destroy
+    redirect_to cocktails_path, notice: 'Cocktail was successfully destroyed.'
   end
 
   private
 
   def set_cocktail
     @cocktail = Cocktail.find(params[:id])
+  end
+
+  def cocktail_params
+    params.require(:cocktail).permit(:name, :photo, :ingredient)
   end
 end

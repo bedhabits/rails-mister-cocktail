@@ -1,0 +1,19 @@
+﻿;;;;;
+tables / cocktails;;;;tables / ingredients;
+name;id;;;name;id
+old fashioned;1;;;rye whiskey;1
+negroni;2;;;Angostura bitters;2
+margarita;3;;;....;3
+cosmopolitan;4;;;;
+mojito;5;;;;
+moscow mule;6;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;tables / doses;;;
+;;description;cocktail_id;ingredient_id;
+;;10cl;1;2;
+;;20cl;2;3;
+;;10cl;1;4;
+;;25cl;3;6;
