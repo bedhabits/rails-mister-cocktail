@@ -2,4 +2,7 @@
   // text-decoration: ;
   background-color: #76856f;
   border-color: #76856f;
+  &:hover {
+    background-color: rgba(118,132,111, 0.2);
+  }
 }

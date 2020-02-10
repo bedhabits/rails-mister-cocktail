@@ -12,10 +12,11 @@
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
 
     <%= yield %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
+    <%= javascript_pack_tag "application" %>
   </body>
 </html>

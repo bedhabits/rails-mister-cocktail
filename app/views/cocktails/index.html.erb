@@ -1,26 +1,36 @@
-<div class="container">
-  <div class="row mt-5">
-    <div class="col-xs-12 col-sm-6">
-      <h1>List of Cocktails</h1>
+<div class="home-banner">
+  <h1>Welcome to <strong>Mister Cocktail</strong></h1>
+
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+
+<div class="card-group">
+  <div class="cards">
+    <%= cl_image_tag("krzwfxwbwgvmgwvdhisd.jpg") %>
+    <div class="card-body">
+
+      <% @cocktails.each do |cocktail| %>
+        <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-title" %>
+
+        <ul>
+          <li>
+            <%= link_to cocktail.ingredient, cocktail_path(cocktail), class: "card-text" %>
+          </li>
+        </ul>
+
+        <button class="btn btn-primary rounded align-item-right card-text"><small>
+          <%= link_to " - Delete", cocktail_path(cocktail), method: :delete %></button></small>
+      <% end %>
+    </div>
 
 
 
-      <ul class="list-group">
-        <% @cocktails.each do |cocktail| %>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          <%= link_to cocktail.name, cocktail_path(cocktail)  %>
+  </div>
 
-          <!-- <span class="badge badge-primary badge-pill"> -->
-          <span class="btn btn-primary rounded" >
-            <%= link_to " - Delete", cocktail_path(cocktail), method: :delete %>
-          </span>
-
-        </li>
-        <% end %>
-      </ul>
+</div>
 
       <br/>
       <%= link_to "Add cocktail", new_cocktail_path, class: "btn btn-primary btn-lg", id: "adding" %>
-    </div>
-  </div>
 </div>
+

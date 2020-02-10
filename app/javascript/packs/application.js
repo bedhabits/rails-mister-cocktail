@@ -1,5 +1,7 @@
 import 'bootstrap';
 
+console.log("Hello from app/javascript/packs/application.js!");
+
 /* eslint no-console:0 */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
@@ -16,3 +18,8 @@ import 'bootstrap';
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
+
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();
